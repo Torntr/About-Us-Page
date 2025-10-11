@@ -1,0 +1,211 @@
+@import url('tokens.css');
+
+:root { /* tokens already in tokens.css */ }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  color: var(--color-fg);
+  background: var(--color-bg);
+}
+
+main {
+  /* this makes room for the fixed navbar we’ll add */
+  padding-top: var(--navbar-h);
+}
+
+/* optional utility for consistent horizontal gutters */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-7); /* desktop/tablet 32px gutters */
+}
+@media (max-width: 768px) {
+  .container { padding-inline: var(--space-4); } /* mobile 16px gutters */
+}
+
+/* ========================================
+   NAVBAR STYLES
+   ======================================== */
+
+/* Fixed header container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-h); /* 72px from tokens */
+  z-index: 1000;
+  background: var(--color-bg); /* white from tokens */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Navbar inner container - uses .container for consistent gutters */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo styling */
+.logo {
+  text-decoration: none;
+  color: var(--color-fg); /* #171717 from tokens */
+  font-size: var(--text-xl); /* 20px from tokens */
+  font-weight: var(--font-weight-semibold); /* 600 from tokens */
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: var(--color-primary); /* #4338ca from tokens */
+}
+
+/* Navigation links container */
+.nav-links {
+  display: flex;
+  gap: var(--space-7); /* 32px from tokens */
+  align-items: center;
+}
+
+/* Individual nav links */
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-secondary); /* #525252 from tokens */
+  font-size: var(--text-base); /* 16px from tokens */
+  font-weight: var(--font-weight-normal); /* 400 from tokens */
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary); /* #4338ca from tokens */
+}
+
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none; /* Hidden by default on desktop */
+  flex-direction: column;
+  gap: var(--space-1); /* 4px from tokens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2); /* 8px from tokens */
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: var(--color-fg); /* #171717 from tokens */
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* ========================================
+   RESPONSIVE / MOBILE STYLES
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Show hamburger button on mobile */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hide nav links by default on mobile */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--navbar-h); /* 72px - sits right below navbar */
+    left: 0;
+    right: 0;
+    background: var(--color-bg); /* white from tokens */
+    border-bottom: 1px solid #e5e7eb;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-4) 0; /* 16px top/bottom from tokens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show nav when .open class is toggled */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Stack links vertically in mobile menu */
+  .nav-links a {
+    padding: var(--space-4) var(--space-7); /* 16px vertical, 32px horizontal from tokens */
+    width: 100%;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+body {
+  margin: 0;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.credits a {
+  color: #000;
+  font-weight: bold;
+}
+
+/* A11y helper */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0;
+}
+
+/* Toggle button base (hidden on desktop) */
+.nav-toggle {
+  display: none;                 /* will show on mobile via media query */
+  background: none; border: 0; padding: var(--space-3); cursor: pointer;
+}
+.nav-toggle .bar {
+  display: block; width: 22px; height: 2px; background: var(--color-fg); margin-block: 4px;
+}
+
+/* Desktop default */
+.nav-links { display: flex; align-items: center; }
+
+/* ---- Mobile rules ---- */
+@media (max-width: 768px) {
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+  /* Hide links by default on mobile */
+  .nav-links {
+    position: absolute; top: var(--navbar-h); left: 0; right: 0;
+    display: none;                     /* hidden until opened */
+    flex-direction: column; gap: var(--space-4);
+    background: var(--color-bg); border-bottom: 1px solid #e5e7eb;
+    padding: var(--space-6) var(--space-7);
+  }
+  /* Shown when toggled */
+  .nav-links.open { display: flex; }
+}
+

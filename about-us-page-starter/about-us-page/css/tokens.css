@@ -1,0 +1,53 @@
+:root {
+    /* Layout */
+    --container-max: 1280px;
+    --navbar-h: 72px; /* adjust later based on Navbar height */
+    
+    
+    /* Breakpoints */
+    --breakpoint-desktop: 1440px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-mobile: 375px;
+    
+    
+    /* Spacing scale (multiples of 4px) */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+    --space-8: 40px;
+    
+    
+    /* Typography */
+    --font-sans: 'Noto Sans', sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    
+    
+    /* Font sizes */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
+    --text-3xl: 30px;
+    --text-4xl: 36px;
+    --text-5xl: 48px;
+    --text-6xl: 60px;
+    
+    
+    /* Colors */
+    --color-bg: #ffffff;
+    --color-fg: #171717;
+    --color-primary: #4338ca; /* brand indigo */
+    --color-secondary: #525252; /* neutral gray */
+    --color-muted: #737373;
+    --color-disabled: #a3a3a3;
+    --color-error: #dc2626;
+    --color-success: #15803d;
+    }
