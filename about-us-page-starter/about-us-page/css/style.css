@@ -1,6 +1,6 @@
 @import url('tokens.css');
 
-:root { /* tokens already in tokens.css */ }
+/* All design tokens are defined in tokens.css */
 
 html, body {
   margin: 0;
@@ -159,6 +159,67 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+/* ============================= */
+/* HERO SECTION STYLES           */
+/* ============================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-3);
+  min-height: calc(100vh - var(--navbar-h)); /* fills screen minus navbar */
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-3);
+}
+
+.hero-subtext {
+  font-size: var(--font-size-lg);
+  color: var(--color-muted);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-normal);
+}
+
+.hero-cta {
+  display: inline-block;
+  background-color: var(--color-brand);
+  color: var(--color-brand-contrast);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-cta:hover,
+.hero-cta:focus-visible {
+  background-color: var(--color-brand-contrast);
+  color: var(--color-brand);
+  transform: scale(1.03);
+}
+
+/* Responsive type scaling */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: var(--font-size-lg);
+  }
+  .hero-subtext {
+    font-size: var(--font-size-base);
+  }
 }
 
 .credits {
