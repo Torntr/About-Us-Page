@@ -153,6 +153,66 @@
           </div>
         </div>
       </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" class="contact-title">Talk to our team</h2>
+          <p class="contact-intro">
+            Have a question or a project in mind? Send us a note and we'll reply soon.
+          </p>
+
+          <form id="contact-form" novalidate>
+            <!-- Name -->
+            <div class="field" id="field-name">
+              <label for="name">Full name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                aria-describedby="name-hint name-error"
+              />
+              <p id="name-hint" class="hint">Please enter your first and last name.</p>
+              <p id="name-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <!-- Email -->
+            <div class="field" id="field-email">
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                required
+                aria-describedby="email-error"
+              />
+              <p id="email-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <!-- Message -->
+            <div class="field" id="field-message">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                aria-describedby="message-error"
+              ></textarea>
+              <p id="message-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="contact-cta">Send message</button>
+
+            <!-- Form status for screen readers -->
+            <p id="form-status" class="sr-only" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!-- Attribute this challenge to yourself! -->

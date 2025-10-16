@@ -387,6 +387,114 @@ body {
   .team-grid { grid-template-columns: 1fr; }
 }
 
+/* ============================= */
+/* CONTACT SECTION               */
+/* ============================= */
+
+.contact {
+  padding-block: var(--space-8);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  scroll-margin-top: var(--navbar-h); /* anchor offset */
+}
+
+.contact-title {
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-3xl);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-3);
+}
+
+.contact-intro {
+  text-align: center;
+  color: var(--color-muted);
+  max-width: 720px;
+  margin: 0 auto var(--space-7);
+}
+
+/* Form layout */
+#contact-form {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-5);
+}
+
+.field label {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  margin-bottom: var(--space-2);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--border-primary, #e5e5e5);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-3);
+  font: inherit;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, .2); /* indigo focus ring */
+}
+
+.hint {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+/* Errors */
+.field.error input,
+.field.error textarea {
+  border-color: #dc2626; /* red-600 */
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, .15);
+}
+
+.error-text {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: #dc2626;
+  min-height: 1.25em; /* reserve space to avoid layout shift */
+}
+
+/* Submit button */
+.contact-cta {
+  justify-self: start;
+  display: inline-block;
+  background: var(--color-brand);
+  color: var(--color-brand-contrast);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, background-color .15s ease;
+}
+
+.contact-cta:hover,
+.contact-cta:focus-visible {
+  background: var(--color-brand-contrast);
+  color: var(--color-brand);
+  transform: translateY(-1px);
+}
+
+/* Screen-reader only helper */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0;
+}
+
 .credits {
   color: #777;
   position: fixed;
